@@ -16,9 +16,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ShareCompat;
+import android.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
@@ -111,10 +115,33 @@ public class ArticleDetailFragment extends Fragment implements
         getLoaderManager().initLoader(0, null, this);
     }
 
+    /********************** my updates *******************************/
+    private  void myUpdates(){
+
+        Toolbar toolbar = (Toolbar) mRootView.findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
+    }
+    /********************** my updates ********************************/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        mRootView = inflater.inflate(R.layout.fragment_content, container, false);
+        mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
+
+
+
+
+/********************** my updates *******************************/
+        // this method active to set toolbar.setNavigationOnClickListener();
+        myUpdates();
+
+/********************** my updates ********************************/
         mDrawInsetsFrameLayout = (DrawInsetsFrameLayout)
                 mRootView.findViewById(R.id.draw_insets_frame_layout);
         mDrawInsetsFrameLayout.setOnInsetsCallback(new DrawInsetsFrameLayout.OnInsetsCallback() {
