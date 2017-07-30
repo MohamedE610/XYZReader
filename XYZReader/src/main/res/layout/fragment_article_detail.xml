@@ -13,21 +13,27 @@
 
     <include layout="@layout/fragment_article_detail_content"/>
 
-    <!-- <ImageButton android:id="@+id/share_fab"
-         android:stateListAnimator="@anim/fab_state_list_anim"
-         android:background="@drawable/add_fab_background"
-        android:layout_gravity="bottom|end"
-         android:layout_marginRight="@dimen/fab_margin"
-         android:layout_marginBottom="@dimen/fab_margin"
-         android:layout_width="56dp"
-         android:layout_height="56dp"
-         android:src="@drawable/ic_share"
-         android:elevation="@dimen/fab_elevation"
-         android:contentDescription="@string/action_share" />
-    -->
+<!--which one of these implementations of FAB is right one ?  and when/why i use this ?
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+and when/why i use this ?
+      android:elevation="6dp"
+      android:translationZ="6dp"
+
+and which one is better than other  ?
+
+and finally in lesson 2 "surfaces" in video number 11 "ADD a FAB" use this
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+ and this   app:elevation="6dp" for resting elevation for our FAB
+ and this   app:pressedTranslationZ="12dp" for when FAB is pressed , FAB raise to 12dp
 
 
-    <android.support.design.widget.FloatingActionButton
+please explain to me the difference between them and when i use first one and
+when i use second one , thanks
+ -->
+
+    <!--<android.support.design.widget.FloatingActionButton
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:src="@drawable/ic_share"
@@ -42,7 +48,28 @@
         android:layout_alignTop="@+id/app_par_layout"
         android:layout_toEndOf="@+id/app_par_layout"
         style="@style/FABStyle"
-        />
+        ></android.support.design.widget.FloatingActionButton>-->
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_share"
+        app:fabSize="normal"
+        android:elevation="6dp"
+        android:translationZ="6dp"
+        app:borderWidth="0dp"
+        app:layout_anchorGravity="bottom|right|end"
+        android:layout_gravity="bottom|end"
+        android:id="@+id/share_fab"
+        app:useCompatPadding="true"
+        android:layout_alignTop="@+id/app_par_layout"
+        android:layout_toEndOf="@+id/app_par_layout"
+        style="@style/FABStyle"
+        ></android.support.design.widget.FloatingActionButton>|
+
+
+
     <!--android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"-->
     <!-- android:layout_marginEnd="8dp"-->
